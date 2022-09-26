@@ -16,6 +16,8 @@ import Alert from "@material-tailwind/react/Alert";
 import H4 from "@material-tailwind/react/Heading4";
 import html2canvas from 'html2canvas';
 import $ from 'jquery';
+import HelloSign from "../../components/modal/HelloSign";
+
 
 
 const SAVE_INTERVAL_MS = 2000;
@@ -121,20 +123,7 @@ function Example() {
     setQuill(q);
   }, []);
 
-  async function sendstringtoserver() {
-
-    html2canvas(document.getElementById('QuillEditor'), {
-      allowTaint: true,
-      foreignObjectRendering: true,
-
-    }).then(function (canvas) {
-      var imgsrc = canvas.toDataURL();
-      
-      console.log(imgsrc);
-    });
-
-
-  }
+ 
 
   return (
     <>
@@ -162,7 +151,7 @@ function Example() {
           Export as PDF
         </Button>
         {/* Digital sign button */}
-        <Button
+        {/* <Button
           color="lightBlue"
           id="geeks"
           buttonType="filled"
@@ -178,7 +167,8 @@ function Example() {
           className="mx-12"
         >
           Digital sign button
-        </Button>
+        </Button> */}
+        <HelloSign text="Digital sign button" />
         <ShareModal text="share" />
         <br />
       </header>

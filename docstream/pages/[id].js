@@ -7,6 +7,7 @@ import Router from "next/dist/next-server/server/router";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import ShareModal from "../components/modal/ShareModal";
+import HelloSign from "../components/modal/HelloSign";
 import Modal from "@material-tailwind/react/Modal";
 import ModalHeader from "@material-tailwind/react/ModalHeader";
 import ModalBody from "@material-tailwind/react/ModalBody";
@@ -15,9 +16,7 @@ import Form from '../components/form';
 import Alert from "@material-tailwind/react/Alert";
 import H4 from "@material-tailwind/react/Heading4";
 
-// import { saveAs } from 'file-saver';
-// import { pdfExporter } from 'quill-to-pdf';
-// import * as quill from 'quilljs';
+
 
 const SAVE_INTERVAL_MS = 2000;
 const TOOLBAR_OPTIONS = [
