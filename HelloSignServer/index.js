@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3003
 const bodyParser = require('body-parser');
+const {generatePDF,sendSignatureRequest,downloadFile,getPendingList} = require('./HelloSignUtils')
 app.use('/', express.static('public'));
 app.set("view engine","ejs");
 
@@ -20,11 +21,23 @@ app.get('/', (req, res) => {
   res.send("hii")
 })
 
-app.post('/getimg', (req, res) => {
-    console.log(req.body)
-    // console.log("its a hit");
+app.post('/sendSignature', async (req, res) => {
+  let fileName='./temp.pdf';
+  console.log(fileName)
+    await generatePDF(req.body.imgsrc,fileName);
+    const signer = {
+      email_address: req.body.Email,
+      name: req.body.Name,
+    };
+    let files=[fileName]
+    sendSignatureRequest(signer,req.body.Title,req.body.Sub,req.body.Mess,files)
   })
 
+  app.get('/sendSignature', async (req, res) => {
+    let list=await getPendingList()
+    res.send(list)
+
+  })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
