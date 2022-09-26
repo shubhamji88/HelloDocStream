@@ -17,7 +17,7 @@ import H4 from "@material-tailwind/react/Heading4";
 import html2canvas from 'html2canvas';
 import $ from 'jquery';
 import HelloSign from "../../components/modal/HelloSign";
-
+import DownloadHelloSign from "../../components/modal/DownloadHelloSign";
 
 
 const SAVE_INTERVAL_MS = 2000;
@@ -150,24 +150,7 @@ function Example() {
         >
           Export as PDF
         </Button>
-        {/* Digital sign button */}
-        {/* <Button
-          color="lightBlue"
-          id="geeks"
-          buttonType="filled"
-          size="regular"
-          rounded={false}
-          block={false}
-          iconOnly={false}
-          ripple="light"
-          onClick={() => {
-
-            sendstringtoserver();
-          }}
-          className="mx-12"
-        >
-          Digital sign button
-        </Button> */}
+        <DownloadHelloSign text="Previous Sig requests" />
         <HelloSign text="Digital sign button" />
         <ShareModal text="share" />
         <br />

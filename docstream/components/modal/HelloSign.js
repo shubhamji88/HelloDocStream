@@ -26,7 +26,7 @@ function HelloSign(props) {
       allowTaint: true,
       foreignObjectRendering: true,
     }).then(function (canvas) {
-      
+
       var imgsrc = canvas.toDataURL();
       var jsonData = {};
 
@@ -36,14 +36,14 @@ function HelloSign(props) {
       jsonData["Title"] = Title;
       jsonData["Sub"] = Sub;
       jsonData["Mess"] = Mess;
-      
+
       $.ajax({
         type: "POST",
-        url: " http://localhost:3003/getimg",
+        url: " http://localhost:3003/sendSignature",
         data: jsonData
-    }).done(function (o) {
+      }).done(function (o) {
         console.log('saved');
-    });
+      });
     });
   }
 
@@ -75,13 +75,19 @@ function HelloSign(props) {
 
         <ModalBody>
           {/* add form to submit */}
-          <div className="flex w-full items-end gap-4">
+          <div className="flex w-full items-end gap-4 p-1 m-1">
             <Input size="md" outline={true} label="Input Medium" placeholder="Enter Name" type="text" onChange={(evt) => { setName(evt.target.value); }} />
             <Input size="md" outline={true} label="Input Medium" placeholder="Enter Email" type="email" onChange={(e) => { setEmail(e.target.value); }} />
           </div>
-          <Input color="indigo" outline={true} label="Input Indigo" placeholder="Title" type="text" onChange={(e) => { setTitle(e.target.value); }} />
-          <Input color="indigo" outline={true} label="Input Indigo" placeholder="Subject" type="text" onChange={(e) => { setSub(e.target.value); }} />
-          <Input color="indigo" outline={true} label="Input Indigo" placeholder="Message" type="text" onChange={(e) => { setMess(e.target.value); }} />
+          <div className="flex w-full items-end gap-4 p-1 m-1">
+            <Input color="indigo" outline={true} label="Input Indigo" placeholder="Title" type="text" onChange={(e) => { setTitle(e.target.value); }} />
+          </div>
+          <div className="flex w-full items-end gap-4 p-1 m-1">
+            <Input color="indigo" outline={true} label="Input Indigo" placeholder="Subject" type="text" onChange={(e) => { setSub(e.target.value); }} />
+          </div>
+          <div className="flex w-full items-end gap-4 p-1 m-1">
+            <Input color="indigo" outline={true} label="Input Indigo" placeholder="Message" type="text" onChange={(e) => { setMess(e.target.value); }} />
+          </div>
         </ModalBody>
         <ModalFooter>
           <Button
