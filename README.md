@@ -24,14 +24,22 @@ The idea for downstream evolved from Three different apps let's first discuss th
 
 Running the project on local system is **strongly recommended**, even if you are not working on the backend. This is becuase to test the middlewars, client applications, or any other component, an instance of DocStreme server is required. Make sure that you have a mongodb instance running. This step might be different depending on your installation type. If you do not have mongodb database installed, refer [this link](https://docs.mongodb.com/manual/administration/install-community/)
 
-- Make sure you have instaled the server you can find the details [here](https://github.com/kdsinghcoder/docstreme-server)
+- Make sure you have instaled the server you can find the details [here](https://github.com/shubhamji88/HelloDocStream)
+- Also make sure you have an instance of mongoDB running locally
 - Start the Server as per details given in first point.
 - Details to install the client side code 
-  - Clone the repository to your system using `git clone https://github.com/kdsinghcoder/docstream`
+  - Clone the repository to your system using `https://github.com/shubhamji88/HelloDocStream`
   - Now open the cloned repository using `cd docstream`
   - Install yarn globally `npm install --global yarn` or find alternative ways [here](https://classic.yarnpkg.com/en/docs/install#windows-stable)
-  - The project depends on numerous npm packages. Install them using `yarn install` or `npm install`
-  - Run `yarn dev` or `npm run dev` to launch a development server.
+  - The project depends on numerous npm packages. Install them using `yarn install`
+  - Run `yarn build` to launch a development server.
+  - Run `yarn dev` to launch a development server.
+  - Now go to the cloned repository  root open terminal and run `cd docstreme-server`
+  - The project depends on numerous npm packages. Install them using `yarn install`
+  - Run `yarn start` to launch backend server.
+  - Now go to the cloned repository  root open terminal and run `cd HelloSignServer`
+  -  Install dependencies using `yarn install`
+  - Run `node index.js` to launch backend server to support Hello Sign API.
   - Open [localhost:3000](http://localhost:3000) and ensure that the server is running.
 
 
