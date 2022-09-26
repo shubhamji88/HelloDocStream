@@ -66,11 +66,6 @@ async function getPendingList(){
   
 }
 
-async function get(){
-    let c=await getPendingList();
-    // console.log(c)
-}
-get()
 module.exports = {generatePDF,sendSignatureRequest,downloadFile,getPendingList}
 
 
