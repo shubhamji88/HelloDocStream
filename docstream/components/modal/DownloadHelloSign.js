@@ -14,31 +14,28 @@ function DownloadHelloSign(props) {
     const [showModal, setShowModal] = React.useState(false);
     const buttonRef = useRef();
 
-    const handleClick = (e) => {
+    
 
-
-    }
-
-    let items=[
+    let items = [
         {
-        signature_request_id: 'b6e2788447facf0154cd797e9540f632f12da12d',
-        title: 'My CV',
-        subject: 'Plz approve and sign the cv',
-        is_complete: false,
-        files_url: 'https://api.hellosign.com/v3/signature_request/files/b6e2788447facf0154cd797e9540f632f12da12d'
-      },
-      {
-        signature_request_id: 'b6e2788447facf0154cd797e9540f632f12dv12d',
-        title: 'My doc',
-        subject: 'We Req you to sign the doc',
-        is_complete: true,
-        files_url: 'https://api.hellosign.com/v3/signature_request/files/b6e2788447facf0154cd797e9540f632f12da12d'
-      }
-      ];
-let itemList=[];
-items.forEach((item,index)=>{
-  itemList.push( <DownloadCard Name={item.title} Title={item.subject} Url = {item.files_url}/>)
-})
+            signature_request_id: 'b6e2788447facf0154cd797e9540f632f12da12d',
+            title: 'My CV',
+            subject: 'Plz approve and sign the cv',
+            is_complete: false,
+            files_url: 'https://api.hellosign.com/v3/signature_request/files/b6e2788447facf0154cd797e9540f632f12da12d'
+        },
+        {
+            signature_request_id: 'b6e2788447facf0154cd797e9540f632f12dv12d',
+            title: 'My doc',
+            subject: 'We Req you to sign the doc',
+            is_complete: true,
+            files_url: 'https://api.hellosign.com/v3/signature_request/files/b6e2788447facf0154cd797e9540f632f12da12d'
+        }
+    ];
+    let itemList = [];
+    items.forEach((item, index) => {
+        itemList.push(<DownloadCard Name={item.title} Title={item.subject} Url={item.files_url} />)
+    })
 
     return (
         <>
@@ -68,8 +65,8 @@ items.forEach((item,index)=>{
 
                 <ModalBody>
 
-                {itemList}
-                    
+                    {itemList}
+
                 </ModalBody>
             </Modal>
         </>

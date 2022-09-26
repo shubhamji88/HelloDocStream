@@ -33,7 +33,7 @@ app.post('/sendSignature', async (req, res) => {
     sendSignatureRequest(signer,req.body.Title,req.body.Sub,req.body.Mess,files)
   })
 
-  app.get('/sendSignature', async (req, res) => {
+  app.get('/getPendingList', async (req, res) => {
     let list=await getPendingList()
     res.send(list)
 
